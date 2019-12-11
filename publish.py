@@ -54,10 +54,14 @@ def main():
     sound = lines[-1].replace('Tontechnik: ', '')
     events.append(Event(d, m, d0, m0, sound, musicians))
 
+  # Get the newest sheet, also to be able to get the correct year
+  latest_sheet = sorted(gc.open(sheetname).worksheets(), key=lambda s: s.title)[-1]
+  print(latest_sheet)
+
   # Spreadsheet
   if sheet_or_cal in 'sb':
     tqdm.write('\nWriting to spreadsheet ...')
-    worksheet = gc.open(sheetname).sheet1
+    worksheet = latest_sheet  # gc.open(sheetname).sheet1
     count = 0
     for e in tqdm(events):
       row = worksheet.find('So., {}. {} '.format(e.day, months[int(e.month)-1])).row
@@ -69,7 +73,8 @@ def main():
   # Calendar
   if sheet_or_cal in 'cb':
     tqdm.write('\nWriting to calendar ...')
-    year = dt.today().year
+    # year = dt.today().year
+    year = latest_sheet.title
     count = 0
     for e in tqdm(events):
       cal_event = {

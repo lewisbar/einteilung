@@ -1,7 +1,7 @@
 months = [
   'Jan.',
   'Feb.',
-  'Mär.',
+  'März',
   'Apr.',
   'Mai',
   'Juni',
