@@ -25,7 +25,7 @@ def most_frequent(people):
 
 def reduce_frencencies(people, amount):
     '''Reduce frequency of the person most appropriate person by 1'''
-    for i in range(amount):
+    for _ in range(amount):
         most_frequent(people).reduced_by += 1
 
 
@@ -33,7 +33,7 @@ def multiply_by_frequency(people):
     '''Take everyone as often as they want'''
     mult = []
     for person in people:
-        for i in range(person.actual_frequency()):
+        for _ in range(person.actual_frequency()):
             mult.append(person)
     return mult
 
