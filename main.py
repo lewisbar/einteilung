@@ -1,8 +1,9 @@
 import arrange
 import publish
 import event_deleter
+from Arrange import coordinator
 
-START = ('s - Start arrangement', arrange.main)
+START = ('s - Start arrangement', coordinator.main)
 PUBLISH = ('p - Publish arrangement', publish.main)
 DELETE = ('d - Delete events from test calendar', event_deleter.main)
 QUIT = ('q - Quit', exit)
