@@ -5,3 +5,4 @@ keys.py
 spreadsheettest-ef4abb2fc43b.json
 einteilung.txt
 .vscode/
+.pytest_cache/
