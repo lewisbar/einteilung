@@ -1,9 +1,9 @@
-import readdata as rd
+from einteilung.steps import readdata as rd
 from itertools import permutations
-from Arrange import output_helper as out
-from Arrange import conflict_manager as confl
-from Arrange import gaps_and_frequencies as gaps
-from Arrange import evaluator
+from einteilung.steps.arrange import output_helper as out
+from einteilung.steps.arrange import conflict_manager as confl
+from einteilung.steps.arrange import gaps_and_frequencies as gaps
+from einteilung.steps.arrange import evaluator
 
 def arrange_task(people, events):
     '''Main function for one task'''
@@ -56,8 +56,8 @@ def main():
         log += '\n\nUnresolved conflicts:' + str(len(unresolved))
         for c in unresolved:
             log += '\n' + str(*c)
-            print('')
-            print(log)
+        print('')
+        print(log)
 
 
 if __name__ == '__main__':

@@ -1,12 +1,26 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.discovery import build  # Google Calendar API
-from months import months
-from event import Event
 from datetime import date as dt
 from tqdm import tqdm
-import keys
+from einteilung.classes.event import Event
+from einteilung.keys import keys
+from einteilung.steps.arrange import output_helper as out
 
+MONTHS = [
+  'Jan.',
+  'Feb.',
+  'März',
+  'Apr.',
+  'Mai',
+  'Juni',
+  'Juli',
+  'Aug.',
+  'Sept.',
+  'Okt.',
+  'Nov.',
+  'Dez.'
+]
 
 def main():
   scope = [
@@ -40,7 +54,7 @@ def main():
     return 'Invalid input'
 
   # Read the data that should be applied
-  with open(keys.RESULTS_FILE, 'r') as f:
+  with open(out.RESULTS_FILE, 'r') as f:
     plan = f.read().strip()
 
   # Parsing
@@ -64,7 +78,7 @@ def main():
     worksheet = latest_sheet  # gc.open(sheetname).sheet1
     count = 0
     for e in tqdm(events):
-      row = worksheet.find('So., {}. {} '.format(e.day, months[int(e.month)-1])).row
+      row = worksheet.find('So., {}. {} '.format(e.day, MONTHS[int(e.month)-1])).row
       worksheet.update_cell(row, 2, e.sound)
       worksheet.update_cell(row, 4, e.musicians)
       count += 1

@@ -1,5 +1,5 @@
-from Arrange import gaps_and_frequencies as gaps
-from person import Person
+from einteilung.steps.arrange import gaps_and_frequencies as gaps
+from einteilung.classes.person import Person
 
 def mock_people(amount):
     people = [

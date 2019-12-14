@@ -1,4 +1,4 @@
-from person import Person
+from einteilung.classes.person import Person
 
 def filter_available(perms, tolerance=0):
     '''Only allow perms where people aren't in places where they are unavailable.

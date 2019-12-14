@@ -1,8 +1,8 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from person import Person
-from job import Job
-import keys
+from einteilung.classes.person import Person
+from einteilung.classes.job import Job
+from einteilung.keys import keys
 
 
 def get_data():

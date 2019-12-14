@@ -1,4 +1,4 @@
-import keys
+RESULTS_FILE = 'einteilung/steps/arrange/einteilung.txt'
 
 def print_perms(perms):
     '''Print permutations. Not used at the moment'''
@@ -31,5 +31,5 @@ def generate_output(jobs, events):
     return out.strip()
 
 def write(output):
-    with open(keys.RESULTS_FILE, 'w+') as f:
+    with open(RESULTS_FILE, 'w+') as f:
       f.write(output)

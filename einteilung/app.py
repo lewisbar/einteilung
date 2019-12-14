@@ -1,14 +1,13 @@
-import arrange
-import publish
-import event_deleter
-from Arrange import coordinator
+from einteilung.steps.arrange import coordinator
+from einteilung.steps import publish
+from einteilung.steps import delete_events
 
 START = ('s - Start arrangement', coordinator.main)
 PUBLISH = ('p - Publish arrangement', publish.main)
-DELETE = ('d - Delete events from test calendar', event_deleter.main)
+DELETE = ('d - Delete events from test calendar', delete_events.main)
 QUIT = ('q - Quit', exit)
 
-def main():
+def run():
   while True:
     options = [START, PUBLISH, DELETE, QUIT]
     print('')
@@ -21,4 +20,4 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+  run()

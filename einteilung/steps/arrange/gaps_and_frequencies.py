@@ -1,4 +1,4 @@
-from person import Person
+from einteilung.classes.person import Person
 
 def impossible_events(people, events):
     imp = 0
@@ -9,6 +9,7 @@ def impossible_events(people, events):
 
 
 def deficiancy(people, events):
+    '''Doesn't take availability into account. This is just a first step in the arrangement process.'''
     freqsum = sum([p.frequency for p in people])
     return events - freqsum
 
