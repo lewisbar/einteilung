@@ -34,8 +34,8 @@ def main():
     keys.KEYFILE, scope)
 
   # Authorization and preparation
-  gc = gspread.authorize(credentials)  # Spreadsheet
-  service = build('calendar', 'v3', credentials=credentials)  # Calendar
+  gspread_client = gspread.authorize(credentials)  # Spreadsheet
+  calendar_client = build('calendar', 'v3', credentials=credentials)  # Calendar
 
   # Test or real?
   test_or_real = input('\nTest or real? (t/r)').lower()
@@ -69,7 +69,7 @@ def main():
     events.append(Event(d, m, d0, m0, sound, musicians))
 
   # Get the newest sheet, also to be able to get the correct year
-  latest_sheet = sorted(gc.open(sheetname).worksheets(), key=lambda s: s.title)[-1]
+  latest_sheet = sorted(gspread_client.open(sheetname).worksheets(), key=lambda s: s.title)[-1]
   print(latest_sheet)
 
   # Spreadsheet
@@ -104,7 +104,7 @@ def main():
           'timeZone': keys.ZONE,
         },
       }
-      cal_event = service.events().insert(
+      cal_event = calendar_client.events().insert(
         calendarId=calId, body=cal_event).execute()
       # print('Event created: {} {}'.format(event['start']['dateTime'], cal_event['summary']))
       count += 1
