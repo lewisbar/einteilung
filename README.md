@@ -1,5 +1,5 @@
 # einteilung
-Makes a plan which volunteer musicians/sound guy is in charge at which date in our church service
+Makes a plan which volunteer musicians/sound guys are in charge at which date in our church service
 
 The program reads its data (which people, jobs and events are there;
 who can do which jobs, wants to play how often and is unavailable at which dates)

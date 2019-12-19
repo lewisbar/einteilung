@@ -25,7 +25,7 @@ def most_frequent(people):
 
 
 def reduce_frencencies(people, amount):
-    '''Reduce frequency of the person most appropriate person by 1'''
+    '''Reduce frequency of the person most appropriate person by 1 until the amount is used up'''
     for _ in range(amount):
         most_frequent(people).reduced_by += 1
 
@@ -40,7 +40,7 @@ def multiply_by_frequency(people):
 
 
 def find_and_fill_gaps(people, events):
-    '''Main gap filler function'''
+    '''MAIN GAP FILLER FUNCTION'''
     defic = deficiancy(people, events)
     impossible = impossible_events(people, events)
 

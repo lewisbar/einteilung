@@ -5,4 +5,4 @@ __pycache__/
 venv/
 einteilung/keys/
 einteilung/steps/arrange/einteilung.txt
-
+einteilung.egg-info/

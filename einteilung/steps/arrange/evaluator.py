@@ -4,6 +4,7 @@ def filter_available(perms, tolerance=0):
     '''Only allow perms where people aren't in places where they are unavailable.
     If there are no good perms, accept perms that have one unavailable person in it
     (or more, if necessary), and replace these people with the placeholder person.'''
+    print(perms)
     good_perms = []
     bad = 0
     for i, perm in enumerate(perms):
