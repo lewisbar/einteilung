@@ -33,11 +33,12 @@ def get_dates(data, month=0):  # If no month is specified, take all dates
 
 def get_people(data, month=0):  # If no month is specified, take all dates
   people = []
+  month_start_index = next((i for i, row in enumerate(data) if row[0].endswith('.{}.'.format(str(month)))), 3)
   for col in range(1, len(data[0])):
     unavailable = []
     for row in range(len(data)):
       if (month == 0 or data[row][0].endswith('.{}.'.format(str(month)))) and data[row][col].lower() == 'x':
-        unavailable.append(row - 3)
+        unavailable.append(row - month_start_index)
     people.append(Person(
         data[0][col].strip(), 
         data[1][col].strip(),
