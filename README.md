@@ -1,6 +1,8 @@
 # einteilung
 Makes a plan which volunteer musicians/sound guy is in charge at which date in our church service
 
+https://user-images.githubusercontent.com/9025866/136676892-99f5e5cb-cc8e-46f1-a452-ffcb97fe7d5a.mp4
+
 The program reads its data (which people, jobs and events are there;
 who can do which jobs, wants to play how often and is unavailable at which dates)
 from a google spreadsheet.
