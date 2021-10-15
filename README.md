@@ -7,7 +7,7 @@ The program reads its data (which people, jobs and events are there;
 who can do which jobs, wants to play how often and is unavailable at which dates)
 from a google spreadsheet.
 Then it divides the event list into months, creates every possible arrangement, and picks the best possibility.
-There should only be 4-5 events per months, or maybe 7 at most. If you have more, there are too many possible permutations.
+There should only be 4-5 events per month, or maybe 7 at most. If you have more, there are too many possible permutations.
 10 events mean 10! (10\*9\*8\*7\*6\*5\*4\*3\*2\*1) possibilities per job. That's a big number.
 That's why the input is divided into months. I typically do this once every three months. That's about 13 sundays.
 Finding every possible arrangement for 13 events would be too much, but for each month individually (4-5 sundays),
