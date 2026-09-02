@@ -13,6 +13,6 @@ pyasn1-modules==0.2.7
 requests==2.33.0
 rsa==4.7
 six==1.12.0
-tqdm==4.36.1
+tqdm==4.66.3
 uritemplate==3.0.0
 urllib3==2.7.0
